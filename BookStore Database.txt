@@ -1,0 +1,68 @@
+sqlite3 bookstoredb.db
+
+create table category(
+cid integer primary key autoincrement,
+category_description varchar(20) not null);
+
+create table book (
+bid integer primary key autoincrement,
+category_id integer(10) not null ,
+book_title varchar(20) not null,
+publisher varchar(20) not null,
+foreign key( category_id ) references  category(cid)
+);
+create table Author(
+aid integer primary key autoincrement,
+book_id integer(10) not null ,
+name varchar(20) not null,
+foreign key( book_id ) references  book(bid)
+);
+//to insert category
+insert into category (category_description) values ('Java');
+insert into category (category_description) values ('Python');
+insert into category (category_description) values ('PHP');
+insert into category (category_description) values ('JavaScript');
+//to insert book
+insert into book (category_id ,book_title, publisher) values (1, 'Core Java Volume I – Fundamentals', 'ABC');
+insert into Book (category_id ,book_title, publisher) values (1, 'Effective Java', 'ABC');
+insert into Book (category_id ,book_title, publisher) values (1, 'Java A Beginner Guide', 'ABC');
+insert into Book (category_id ,book_title, publisher) values (1, 'Groovy and Grails Recipes', 'Myanmar Book');
+insert into Book (category_id ,book_title, publisher) values (1, 'Modern Java Web Development','Myanmar Book');
+insert into Book (category_id ,book_title, publisher) values (1, 'Java 7 Recipes', 'Lucky7');
+insert into Book (category_id ,book_title, publisher) values (1, 'Java EE 7 Recipes', 'Lucky7');
+insert into Book (category_id ,book_title, publisher) values (1, 'Beginning Java 7 ', 'Lucky7');
+insert into Book (category_id ,book_title, publisher) values (1, 'Pro Java 7 NIO.2', 'Moon Star');
+insert into Book (category_id ,book_title, publisher) values (1, 'Java 7 for Absolute Beginners', 'Moon Star');
+insert into Book (category_id ,book_title, publisher) values (1, 'Oracle Certified Java Enterprise Architect Java EE7', 'Moon Star');
+insert into Book (category_id ,book_title, publisher) values (2, 'Basic Python Edition 1', 'Moon Star');
+insert into Book (category_id ,book_title, publisher) values (2, 'Basic Python Edition 2', 'Moon Star');
+insert into Book (category_id ,book_title, publisher) values (2, 'Basic Python Edition 3', 'Lucky7');
+insert into Book (category_id ,book_title, publisher) values (2, 'Advance Python Edition 1', 'Lucky7');
+insert into Book (category_id ,book_title, publisher) values (2, 'Advance Python Edition 2', 'Lucky7');
+insert into Book (category_id ,book_title, publisher)values (3, 'PHP Edition 1', 'Myanmar Book');
+insert into Book (category_id ,book_title, publisher) values (3, 'PHP Edition 2', 'Myanmar Book');
+insert into Book (category_id ,book_title, publisher) values (3, 'Advance PHP Edition 1', 'Myanmar Book');
+insert into Book (category_id ,book_title, publisher) values (3, 'Advance PHP Edition 2', 'Myanmar Book');
+insert into Book (category_id ,book_title, publisher) values (3, 'Basic PHP Programming', 'ABC');
+insert into Book (category_id ,book_title, publisher) values (4, 'Basic JavaScript Programming', 'ABC');
+insert into Book (category_id ,book_title, publisher) values (4, 'JavaScript Edition 1', 'ABC');
+
+//to insert author
+insert into Author (book_id, name ) values (1, 'Smith');
+insert into Author (book_id, name) values (2, 'Smith');
+insert into Author (book_id, name) values (3, 'John');
+insert into Author (book_id, name) values (4, 'John');
+insert into Author (book_id, name) values (5, 'Rosi');
+insert into Author (book_id, name) values (6, 'Rosi');
+insert into Author (book_id, name) values (7, 'Marry');
+insert into Author (book_id, name) values (8, 'Marry');
+insert into Author (book_id, name)values (9, 'Boss');
+insert into Author (book_id, name) values (10, 'Mawbi');
+insert into Author (book_id, name) values (11, 'Mawbi');
+insert into Author (book_id, name ) values (12, 'Smith');
+insert into Author (book_id, name) values (13, 'Smith');
+insert into Author (book_id, name) values (14, 'John');
+insert into Author (book_id, name) values (15, 'John');
+insert into Author (book_id, name) values (16, 'Rosi');
+insert into Author (book_id, name) values (17, 'Rosi');
+insert into Author (book_id, name) values (18, 'Marry');
